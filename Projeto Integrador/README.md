@@ -15,7 +15,8 @@ indicado anteriormente.
 **US102 -** Pretende-se que sejam gerados valores para os dados dos sensores. Cada sensor de um
 dado tipo deve produzir valores com uma determinada frequência (por exemplo, 20 segundos). Os
 protótipos das funções a desenvolver em Assembly estão indicados em anexo.
-Critério de aceitação: os valores gerados devem ter alguma coerência, quer entre valores
+
+**Critério de aceitação:** os valores gerados devem ter alguma coerência, quer entre valores
 consecutivos, quer, em alguns casos, entre os valores gerados por sensores de tipos diferentes.
 
 **US103 -** Deve ser construída em C, uma matriz diária de resumo de todos os tipos de sensores. Para
@@ -32,21 +33,23 @@ erradas e gerar uma nova semente para a geração aleatória de valores.
 **Requisitos para o Sprint 2**
 
 **US110 -** A informação de cada sensor deve ser armazenada numa estrutura do tipo:
-typedef struct {
-    unsigned short id;
-    unsigned char sensor_type;
-    unsigned short max_limit; // limites do sensor
-    unsigned short min_limit;
-    unsigned long frequency; // frequency de leituras (em segundos)
-    unsigned long readings_size; // tamanho do array de leituras
-    unsigned short *readings; // array de leituras diárias
-    ... // adicionar o que acharem conveniente
- } Sensor;
+    
+    typedef struct {
+        unsigned short id;
+        unsigned char sensor_type;
+        unsigned short max_limit; // limites do sensor
+        unsigned short min_limit;
+        unsigned long frequency; // frequency de leituras (em segundos)
+        unsigned long readings_size; // tamanho do array de leituras
+        unsigned short *readings; // array de leituras diárias
+        ... // adicionar o que acharem conveniente
+    } Sensor;
 
 Cada tipo de sensor possui uma determinada frequência de leituras. Essa frequência deve ser obtida
 durante a execução do programa, a partir de um ficheiro de configuração, ou perguntando ao
 utilizador. Naturalmente, essa frequência determina o tamanho do array de leituras diárias.
-Critério de aceitação: Deve ser possível ter vários sensores de um mesmo tipo, cujo número é
+
+**Critério de aceitação:** Deve ser possível ter vários sensores de um mesmo tipo, cujo número é
 também determinado durante a execução. Para cada tipo de sensor considerado, deve existir um
 array dinâmico de estruturas.
 
